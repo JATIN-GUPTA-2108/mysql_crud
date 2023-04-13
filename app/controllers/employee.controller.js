@@ -2,7 +2,7 @@ const Employee = require("../models/employee.model.js");
 
 // Create and Save a new Employee
 exports.create = (req, res) => {
-  // Validate request
+  
   if (!req.body) {
     res.status(400).send({
       message: "Content can not be empty!"
@@ -61,7 +61,7 @@ exports.findOne = (req, res) => {
 
 // Update a Employee identified by the id in the request
 exports.update = (req, res) => {
-  // Validate Request
+  
   if (!req.body) {
     res.status(400).send({
       message: "Content can not be empty!"
