@@ -1,11 +1,11 @@
 const sql = require("./db.js");
 
-// constructor
+
 const Employee = function(employee) {
   this.name = employee.name;
   this.email = employee.email;
 };
-// INSERT INTO employees (name, email) VALUES ("vasjd" , "fajkfsd");
+
 
 Employee.create = (newEmployee, result) => {
   sql.query("INSERT INTO employees SET ?", newEmployee, (err, res) => {
@@ -34,7 +34,7 @@ Employee.findById = (id, result) => {
       return;
     }
 
-    // not found Employee with the id
+    
     result({ kind: "not_found" }, null);
   });
 };
@@ -103,7 +103,7 @@ Employee.remove = (id, result) => {
     }
 
     if (res.affectedRows == 0) {
-      // not found Employee with the id
+     
       result({ kind: "not_found" }, null);
       return;
     }
