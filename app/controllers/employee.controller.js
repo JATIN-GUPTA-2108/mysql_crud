@@ -58,17 +58,6 @@ exports.findOne = (req, res) => {
   });
 };
 
-// find all published Employees
-exports.findAllPublished = (req, res) => {
-  Employee.getAllPublished((err, data) => {
-    if (err)
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving employees."
-      });
-    else res.send(data);
-  });
-};
 
 // Update a Employee identified by the id in the request
 exports.update = (req, res) => {
